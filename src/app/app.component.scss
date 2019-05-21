@@ -1,0 +1,613 @@
+@import '~igniteui-angular/lib/core/styles/themes/utilities';
+@import '~igniteui-angular/lib/core/styles/components/input/input-group-component';
+@import '~igniteui-angular/lib/core/styles/components/input/input-group-theme';
+@import '~igniteui-angular/lib/core/styles/components/ripple/ripple-component';
+@import '~igniteui-angular/lib/core/styles/components/ripple/ripple-theme';
+@import '~igniteui-angular/lib/core/styles/components/button/button-component';
+@import '~igniteui-angular/lib/core/styles/components/button/button-theme';
+@import '~igniteui-angular/lib/core/styles/components/icon/icon-component';
+@import '~igniteui-angular/lib/core/styles/components/icon/icon-theme';
+
+@import '../themes/angularlight/index';
+
+
+main {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+	overflow: auto;
+    height: 100%;
+}
+
+form {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+
+
+.all {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.rectangle {
+position: absolute;
+z-index: 0;
+
+width: 1920px;
+min-width: 1920px;
+height: 80px;
+min-height: 80px;
+
+background-color: igx-color($default-palette, primary);
+
+}
+.group6 {
+position: absolute;
+top: 6px;
+z-index: 1;
+
+position: relative;
+padding: 0;
+}
+
+.group3 {
+position: absolute;
+left: 39px;
+z-index: 0;
+
+position: relative;
+padding: 0;
+}
+
+.logo {
+width: 150px;
+min-width: 150px;
+height: 55px;
+min-height: 55px;
+position: absolute;
+top: 12px;
+left: 80px;
+z-index: 1;
+
+position: relative;
+padding: 0;
+}
+
+.rectangle-row {
+
+position: relative;
+padding: 0;
+}
+
+.dropdown {
+margin-left: 1456px;
+
+display: flex;
+flex-direction: column;
+padding: 0;
+flex-shrink: 0;
+background-color: rgba(255, 255, 255, 1.0);
+}
+
+.navbar {
+height: 224px;
+min-height: 224px;
+position: absolute;
+z-index: 1;
+
+display: flex;
+flex-direction: column;
+padding: 0;
+flex-shrink: 0;
+}
+
+.home-1 {
+color: igx-color($default-palette, grays, 700);
+margin-top: 0px !important;
+height: 24px;
+min-height: 24px;
+
+font-weight: 600;
+}
+.myjobs {
+color: igx-color($default-palette, grays, 900);
+margin-left: 8px !important;
+
+margin-top: 0px !important;
+height: 24px;
+min-height: 24px;
+
+font-weight: 600;
+}
+.group {
+
+display: flex;
+flex-direction: row;
+flex-shrink: 0;
+padding: 0;
+}
+
+.my-jobs {
+color: igx-color($default-palette, primary);
+margin-top: 8px !important;
+
+height: 57px;
+min-height: 57px;
+
+}
+.group5 {
+height: 91px;
+min-height: 91px;
+margin-top: 86px;
+margin-left: 80px;
+
+display: flex;
+flex-direction: column;
+padding: 0;
+flex-shrink: 0;
+}
+
+.oval {
+position: absolute;
+z-index: 0;
+
+width: 72px;
+min-width: 72px;
+height: 72px;
+min-height: 72px;
+
+border-radius: 50%;
+background-color: igx-color($default-palette, primary);
+
+}
+.group2-copy2 {
+
+position: relative;
+padding: 0;
+}
+
+.oval-1 {
+position: absolute;
+z-index: 0;
+
+width: 72px;
+min-width: 72px;
+height: 72px;
+min-height: 72px;
+
+border-radius: 50%;
+background-color: igx-color($default-palette, primary);
+
+}
+.group2 {
+margin-left: 28px;
+
+position: relative;
+padding: 0;
+}
+
+.oval-2 {
+position: absolute;
+z-index: 0;
+
+width: 72px;
+min-width: 72px;
+height: 72px;
+min-height: 72px;
+
+border-radius: 50%;
+background-color: igx-color($default-palette, primary);
+
+}
+.group2-copy {
+margin-left: 28px;
+
+position: relative;
+padding: 0;
+}
+
+.oval-3 {
+position: absolute;
+z-index: 0;
+
+width: 72px;
+min-width: 72px;
+height: 72px;
+min-height: 72px;
+
+border-radius: 50%;
+background-color: igx-color($default-palette, primary);
+
+}
+.group2-copy3 {
+margin-left: 28px;
+
+position: relative;
+padding: 0;
+}
+
+.group12 {
+width: 372px;
+min-width: 372px;
+height: 72px;
+min-height: 72px;
+margin: 100px 80px 0 auto;
+
+display: flex;
+flex-direction: row;
+flex-shrink: 0;
+padding: 0;
+}
+
+.header {
+width: 1920px;
+min-width: 1920px;
+height: 200px;
+min-height: 200px;
+
+display: flex;
+flex-direction: row;
+flex-shrink: 0;
+padding: 0;
+background-color: igx-color($default-palette, grays, 200);
+}
+
+.buttons-flat-1 {
+width: 226px;
+min-width: 226px;
+height: 36px;
+min-height: 36px;
+
+}
+.buttons-flat-copy-1 {
+width: 145px;
+min-width: 145px;
+height: 36px;
+min-height: 36px;
+
+}
+.inputs-input-border-1 {
+width: 409px;
+min-width: 409px;
+
+}
+.buttons-flat-row {
+margin-right: 1px;
+
+display: flex;
+flex-direction: row;
+flex-shrink: 0;
+padding: 0;
+}
+
+.inputs-input-border-copy-1 {
+width: 199px;
+min-width: 199px;
+
+}
+.inputs-input-border-copy-row {
+margin-top: 496px;
+
+display: flex;
+flex-direction: row;
+flex-shrink: 0;
+padding: 0;
+}
+
+.grid {
+height: 602px;
+min-height: 602px;
+margin-top: 45px;
+margin-right: 80px;
+margin-left: 80px;
+
+display: flex;
+flex-direction: column;
+padding: 0;
+flex-shrink: 0;
+}
+
+.rectangle-copy2 {
+margin: auto 0 40px 0;
+
+width: 1760px;
+min-width: 1760px;
+height: 2px;
+min-height: 2px;
+
+background-color: igx-color($default-palette, grays, 400);
+
+}
+.contacts {
+display: block;
+color: igx-color($default-palette, primary);
+margin-top: 0px !important;
+height: 24px;
+min-height: 24px;
+
+}
+.blank-name {
+display: block;
+color: igx-color($default-palette, grays, 900);
+margin-top: 0px !important;
+height: 24px;
+min-height: 24px;
+
+}
+.a2018-baker-hughesa {
+display: block;
+color: igx-color($default-palette, grays, 900);
+margin-left: 2px !important;
+
+margin-top: 0px !important;
+height: 24px;
+min-height: 24px;
+
+font-weight: 600;
+}
+.group10 {
+height: 24px;
+min-height: 24px;
+margin: auto 0 0 auto;
+
+display: flex;
+flex-direction: row;
+flex-shrink: 0;
+padding: 0;
+}
+
+.contacts-row {
+margin-top: 16px;
+margin-right: 1px;
+
+display: flex;
+flex-direction: row;
+flex-shrink: 0;
+padding: 0;
+}
+
+.footer {
+height: 42px;
+min-height: 42px;
+margin: auto 0 0 80px;
+
+display: flex;
+flex-direction: column;
+padding: 0;
+flex-shrink: 0;
+}
+
+.main-area {
+position: absolute;
+top: 80px;
+z-index: 0;
+
+display: flex;
+flex-direction: column;
+padding: 0;
+flex-shrink: 0;
+}
+
+.navbar-row {
+
+position: relative;
+padding: 0;
+}
+
+@function get-palette($palette, $variant: 'light') {
+$p: igx-color($palette, 'primary');
+$s: igx-color($palette, 'secondary');
+@return igx-palette($primary: $p,
+$secondary: $s,
+$grays: if($variant == 'light', #fff, #000)
+);
+}
+@function get-schema($variant: 'light') {
+@return map-get((
+dark: $dark-schema,
+light: $light-schema
+), $variant);
+}
+
+$icon-extra-large-theme: igx-icon-theme(
+$color: igx-color($default-palette, primary, 100),
+$size: 36px
+);
+
+$icon-extra-large-1-theme: igx-icon-theme(
+$color: igx-color($default-palette, primary, 100),
+$size: 36px
+);
+
+$icon-medium-theme: igx-icon-theme(
+$color: igx-color($default-palette, grays, 700),
+$size: 24px
+);
+
+$icon-extra-large-2-theme: igx-icon-theme(
+$color: rgb(255, 255, 255),
+$size: 36px
+);
+
+$icon-extra-large-3-theme: igx-icon-theme(
+$color: rgb(255, 255, 255),
+$size: 36px
+);
+
+$icon-extra-large-4-theme: igx-icon-theme(
+$color: rgb(255, 255, 255),
+$size: 36px
+);
+
+$icon-extra-large-5-theme: igx-icon-theme(
+$color: rgb(255, 255, 255),
+$size: 36px
+);
+
+$buttons-flat-theme: igx-button-theme(
+$flat-background: rgba(0, 0, 0, 0),
+$flat-text-color: igx-color($default-palette, primary)
+);
+
+$buttons-flat-icon-theme: igx-icon-theme(
+$color: igx-color($default-palette, primary)
+);
+
+$buttons-flat-copy-theme: igx-button-theme(
+$flat-background: rgba(0, 0, 0, 0),
+$flat-text-color: igx-color($default-palette, primary)
+);
+
+$buttons-flat-copy-icon-theme: igx-icon-theme(
+$color: igx-color($default-palette, primary)
+);
+
+$inputs-input-border-theme: igx-input-group-theme(
+$idle-bottom-line-color: igx-color($default-palette, grays),
+$box-background: transparent,
+$border-background: rgba(0, 0, 0, 0),
+$schema: get-schema('dark'),
+$palette: get-palette($default-palette, 'dark')
+);
+
+$inputs-input-border-2-suffix-theme: igx-icon-theme(
+$color: igx-color($default-palette, grays, 700)
+);
+
+$inputs-input-border-copy-theme: igx-input-group-theme(
+$idle-bottom-line-color: igx-color($default-palette, grays),
+$box-background: transparent,
+$border-background: rgba(0, 0, 0, 0),
+$schema: get-schema('dark'),
+$palette: get-palette($default-palette, 'dark')
+);
+
+$inputs-input-border-copy-2-suffix-theme: igx-icon-theme(
+$color: igx-color($default-palette, grays, 700)
+);
+
+
+:host {
+::ng-deep {
+.icon-extra-large {
+@include igx-icon($icon-extra-large-theme);
+line-height: 0px;
+position: absolute;
+top: 22px;
+left: 1744px;
+z-index: 3;
+
+}
+
+.icon-extra-large-1 {
+@include igx-icon($icon-extra-large-1-theme);
+line-height: 0px;
+position: absolute;
+top: 22px;
+left: 1804px;
+z-index: 2;
+
+}
+
+.icon-medium {
+@include igx-icon($icon-medium-theme);
+line-height: 0px;
+margin-top: 2px;
+margin-left: 12px;
+
+}
+
+.icon-extra-large-2 {
+@include igx-icon($icon-extra-large-2-theme);
+line-height: 0px;
+position: absolute;
+top: 18px;
+left: 18px;
+z-index: 1;
+
+}
+
+.icon-extra-large-3 {
+@include igx-icon($icon-extra-large-3-theme);
+line-height: 0px;
+position: absolute;
+top: 18px;
+left: 18px;
+z-index: 1;
+
+}
+
+.icon-extra-large-4 {
+@include igx-icon($icon-extra-large-4-theme);
+line-height: 0px;
+position: absolute;
+top: 18px;
+left: 18px;
+z-index: 1;
+
+}
+
+.icon-extra-large-5 {
+@include igx-icon($icon-extra-large-5-theme);
+line-height: 0px;
+position: absolute;
+top: 18px;
+left: 18px;
+z-index: 1;
+
+}
+
+.buttons-flat {
+@include igx-button($buttons-flat-theme);
+margin-top: 7px;
+
+}
+
+.buttons-flat-icon {
+@include igx-icon($buttons-flat-icon-theme);
+margin: auto;
+}
+
+.buttons-flat-copy {
+@include igx-button($buttons-flat-copy-theme);
+margin-top: 7px;
+margin-left: 16px;
+
+}
+
+.buttons-flat-copy-icon {
+@include igx-icon($buttons-flat-copy-icon-theme);
+margin: auto;
+}
+
+.inputs-input-border {
+@include igx-input-group($inputs-input-border-theme);
+margin: 0 0 0 auto;
+
+}
+
+.inputs-input-border-2-suffix {
+@include igx-icon($inputs-input-border-2-suffix-theme);
+}
+
+.inputs-input-border-copy {
+@include igx-input-group($inputs-input-border-copy-theme);
+margin: auto 0 3px 0;
+
+}
+
+.inputs-input-border-copy-2-suffix {
+@include igx-icon($inputs-input-border-copy-2-suffix-theme);
+}
+
+}
+}
+
