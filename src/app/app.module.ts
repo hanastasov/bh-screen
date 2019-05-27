@@ -4,14 +4,17 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RouterModule } from '@angular/router';
 import { AppRoutingModule } from './app-routing.module';
-import { IgxInputGroupModule, IgxIconModule, IgxButtonModule, IgxRippleModule } from 'igniteui-angular';
+import { IgxInputGroupModule, IgxIconModule, IgxButtonModule, IgxRippleModule, IgxGridModule, IgxAvatarModule,
+    IgxOverlayService, IgxToggleModule} from 'igniteui-angular';
 import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
+import { SettingsMenuComponent } from './settings-menu/settings-menu.component';
 
 @NgModule({
 
     declarations: [
-        AppComponent
+        AppComponent,
+        SettingsMenuComponent
     ],
     imports: [
         BrowserModule,
@@ -19,14 +22,17 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms';
         AppRoutingModule,
         IgxInputGroupModule,
         IgxIconModule,
+        IgxToggleModule,
         IgxButtonModule,
+        IgxGridModule,
         IgxRippleModule,
+        IgxAvatarModule,
         CommonModule,
         BrowserAnimationsModule,
         ReactiveFormsModule,
         FormsModule
     ],
-    providers: [],
+    providers: [IgxOverlayService],
     bootstrap: [AppComponent],
     exports: [
         RouterModule
