@@ -8,6 +8,7 @@
 @import '~igniteui-angular/lib/core/styles/components/icon/icon-component';
 @import '~igniteui-angular/lib/core/styles/components/icon/icon-theme';
 @import '../themes/angularlight/index';
+$app-palette: igx-palette($primary: #0D61B5, $secondary: #e41c77);
 
 main {
 	margin: 0;
@@ -29,11 +30,10 @@ main {
 	min-width: 1920px;
 	height: 80px;
 	min-height: 80px;
-	background-color: igx-color($default-palette, primary);
+	background-color: igx-color($app-palette, primary);
 }
 
 .group6 {
-	position: absolute;
 	top: 6px;
 	z-index: 1;
 	position: relative;
@@ -41,7 +41,6 @@ main {
 }
 
 .group3 {
-	position: absolute;
 	left: 39px;
 	z-index: 0;
 	position: relative;
@@ -49,16 +48,20 @@ main {
 }
 
 .logo {
-	width: 150px;
-	min-width: 150px;
+	width: 130px;
+	min-width: 130px;
 	height: 55px;
 	min-height: 55px;
-	position: absolute;
 	top: 12px;
 	left: 80px;
 	z-index: 3;
 	position: relative;
 	padding: 0;
+
+  img {
+    width: 100%;
+    height: auto;
+  }
 }
 
 .contextual {
@@ -76,6 +79,11 @@ main {
 	padding: 0;
 	flex-shrink: 0;
 	background-color: rgba(255, 255, 255, 1.0);
+}
+
+.avatar-label {
+  margin-left: 8px;
+  color: #fff;
 }
 
 .contextual-row {
@@ -104,7 +112,7 @@ main {
 }
 
 .home-1 {
-	color: igx-color($default-palette, grays, 700);
+	color: igx-color($app-palette, grays, 700);
 	margin-top: 0px !important;
 	height: 24px;
 	min-height: 24px;
@@ -113,7 +121,7 @@ main {
 }
 
 .myjobs {
-	color: igx-color($default-palette, grays, 900);
+	color: igx-color($app-palette, grays, 900);
 	margin-left: 8px !important;
 	margin-top: 0px !important;
 	height: 24px;
@@ -157,7 +165,7 @@ main {
 	height: 72px;
 	min-height: 72px;
 	border-radius: 50%;
-	background-color: igx-color($default-palette, primary);
+	background-color: igx-color($app-palette, primary);
 }
 
 .group2-copy2 {
@@ -178,7 +186,7 @@ main {
 	height: 72px;
 	min-height: 72px;
 	border-radius: 50%;
-	background-color: igx-color($default-palette, primary);
+	background-color: igx-color($app-palette, primary);
 }
 
 .group2 {
@@ -199,7 +207,7 @@ main {
 	height: 72px;
 	min-height: 72px;
 	border-radius: 50%;
-	background-color: igx-color($default-palette, primary);
+	background-color: igx-color($app-palette, primary);
 }
 
 .group2-copy {
@@ -220,7 +228,7 @@ main {
 	height: 72px;
 	min-height: 72px;
 	border-radius: 50%;
-	background-color: igx-color($default-palette, primary);
+	background-color: igx-color($app-palette, primary);
 }
 
 .group2-copy3 {
@@ -254,14 +262,26 @@ main {
 	flex-direction: row;
 	flex-shrink: 0;
 	padding: 0;
-	background-color: igx-color($default-palette, grays, 200);
+	background-color: igx-color($app-palette, grays, 200);
+}
+
+.flat-button-group {
+  display: flex;
+  justify-content: space-between;
 }
 
 .buttons-flat-1 {
-	width: 226px;
-	min-width: 226px;
 	height: 36px;
 	min-height: 36px;
+
+}
+
+.buttons-flat {
+  margin-right: 8px;
+
+  igx-icon {
+    margin-right: 4px;
+  }
 }
 
 .buttons-flat-copy-1 {
@@ -279,6 +299,7 @@ main {
 .buttons-flat-row {
 	margin-right: 1px;
 	display: flex;
+  justify-content: space-between;
 	flex-direction: row;
 	flex-shrink: 0;
 	padding: 24px 0px;
@@ -314,7 +335,7 @@ main {
 	min-width: 1760px;
 	height: 2px;
 	min-height: 2px;
-	background-color: igx-color($default-palette, grays, 400);
+	background-color: igx-color($app-palette, grays, 400);
 }
 
 .contacts {
@@ -328,7 +349,7 @@ main {
 
 .blank-name {
 	display: block;
-	color: igx-color($default-palette, grays, 900);
+	color: igx-color($app-palette, grays, 900);
 	margin-top: 0px !important;
 	height: 24px;
 	min-height: 24px;
@@ -337,7 +358,7 @@ main {
 
 .a2018-baker-hughesa {
 	display: block;
-	color: igx-color($default-palette, grays, 900);
+	color: igx-color($app-palette, grays, 900);
 	margin-left: 2px !important;
 	margin-top: 0px !important;
 	height: 24px;
@@ -357,14 +378,13 @@ main {
 }
 
 .contacts-row {
-	margin-top: 16px;
-	margin-right: 1px;
+	margin: 16px 0;
 	display: flex;
 	flex-direction: row;
 	flex-shrink: 0;
 	padding: 0;
 	width: 1760px;
-    min-width: 1760px;
+  min-width: 1760px;
 }
 
 .footer {
@@ -404,21 +424,21 @@ main {
 }
 
 $icon-extra-large-theme: igx-icon-theme( $color: rgb(255, 255, 255), $size: 36px);
-$icon-extra-large-1-theme: igx-icon-theme( $color: igx-color($default-palette, primary, 100), $size: 36px);
-$icon-extra-large-2-theme: igx-icon-theme( $color: igx-color($default-palette, primary, 100), $size: 36px);
-$icon-medium-theme: igx-icon-theme( $color: igx-color($default-palette, grays, 700), $size: 24px);
+$icon-extra-large-1-theme: igx-icon-theme( $color: igx-color($app-palette, primary, 100), $size: 36px);
+$icon-extra-large-2-theme: igx-icon-theme( $color: igx-color($app-palette, primary, 100), $size: 36px);
+$icon-medium-theme: igx-icon-theme( $color: igx-color($app-palette, grays, 700), $size: 24px);
 $icon-extra-large-3-theme: igx-icon-theme( $color: rgb(255, 255, 255), $size: 36px);
 $icon-extra-large-4-theme: igx-icon-theme( $color: rgb(255, 255, 255), $size: 36px);
 $icon-extra-large-5-theme: igx-icon-theme( $color: rgb(255, 255, 255), $size: 36px);
 $icon-extra-large-6-theme: igx-icon-theme( $color: rgb(255, 255, 255), $size: 36px);
-$buttons-flat-theme: igx-button-theme( $flat-background: rgba(0, 0, 0, 0), $flat-text-color: igx-color($default-palette, primary));
-$buttons-flat-icon-theme: igx-icon-theme( $color: igx-color($default-palette, primary));
-$buttons-flat-copy-theme: igx-button-theme( $flat-background: rgba(0, 0, 0, 0), $flat-text-color: igx-color($default-palette, primary));
-$buttons-flat-copy-icon-theme: igx-icon-theme( $color: igx-color($default-palette, primary));
-$inputs-input-border-theme: igx-input-group-theme( $idle-bottom-line-color: igx-color($default-palette, grays), $box-background: transparent, $border-background: rgba(0, 0, 0, 0), $schema: get-schema('dark'), $palette: get-palette($default-palette, 'dark'));
-$inputs-input-border-2-suffix-theme: igx-icon-theme( $color: igx-color($default-palette, grays, 700));
-$inputs-input-border-copy-theme: igx-input-group-theme( $idle-bottom-line-color: igx-color($default-palette, grays), $box-background: transparent, $border-background: rgba(0, 0, 0, 0), $schema: get-schema('dark'), $palette: get-palette($default-palette, 'dark'));
-$inputs-input-border-copy-2-suffix-theme: igx-icon-theme( $color: igx-color($default-palette, grays, 700));
+$buttons-flat-theme: igx-button-theme( $flat-background: rgba(0, 0, 0, 0), $flat-text-color: igx-color($app-palette, primary));
+$buttons-flat-icon-theme: igx-icon-theme( $color: igx-color($app-palette, primary));
+$buttons-flat-copy-theme: igx-button-theme( $flat-background: rgba(0, 0, 0, 0), $flat-text-color: igx-color($app-palette, primary));
+$buttons-flat-copy-icon-theme: igx-icon-theme( $color: igx-color($app-palette, primary));
+$inputs-input-border-theme: igx-input-group-theme( $idle-bottom-line-color: igx-color($app-palette, grays), $box-background: transparent, $border-background: rgba(0, 0, 0, 0), $schema: get-schema('dark'), $palette: get-palette($app-palette, 'dark'));
+$inputs-input-border-2-suffix-theme: igx-icon-theme( $color: igx-color($app-palette, grays, 700));
+$inputs-input-border-copy-theme: igx-input-group-theme( $idle-bottom-line-color: igx-color($app-palette, grays), $box-background: transparent, $border-background: rgba(0, 0, 0, 0), $schema: get-schema('dark'), $palette: get-palette($app-palette, 'dark'));
+$inputs-input-border-copy-2-suffix-theme: igx-icon-theme( $color: igx-color($app-palette, grays, 700));
 :host {
 	::ng-deep {
 		.icon-extra-large {

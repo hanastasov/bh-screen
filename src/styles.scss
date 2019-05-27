@@ -1,4 +1,17 @@
 /* You can add global styles to this file, and also import other style files */
 @import '~igniteui-angular/lib/core/styles/themes/index';
 @include igx-core();
-@include igx-theme($default-palette);
+
+$app-palette: igx-palette($primary: #0D61B5, $secondary: #e41c77);
+
+@include igx-theme($app-palette);
+
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+* {
+  box-sizing: border-box;
+}

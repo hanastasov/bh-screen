@@ -8,10 +8,8 @@
                  <img class="group6" src="../assets/images/logo_BH.svg" />
               </div>
               <div class="avatar">
-                 <div class="icon-extra-large">
-                     <igx-avatar src="https://staging.infragistics.local/angular-demos/assets/images/men/3.jpg" roundShape="true" size="small"></igx-avatar>
-                 </div>
-                 <span>Syed Jamil</span>
+                <igx-avatar src="https://staging.infragistics.local/angular-demos/assets/images/men/3.jpg" roundShape="true" size="small"></igx-avatar>
+                <span class="avatar-label">Syed Jamil</span>
               </div>
               <div class="icon-extra-large-1">
                  <igx-icon 
@@ -83,21 +81,19 @@
               </div>
               <div class="grid">
                  <div class="buttons-flat-row">
-                    <div class="buttons-flat">
-                       <button igxRipple class="buttons-flat-1" igxButton="flat" >
-                          <div class="buttons-flat-icon">
-                             <igx-icon>menu</igx-icon>
-                          </div>
+                    <div class="flat-button-group">
+                      <div class="buttons-flat">
+                        <button igxRipple class="buttons-flat-1" igxButton="flat" >
+                          <igx-icon>menu</igx-icon>
                           Well data explorer
-                       </button>
-                    </div>
-                    <div class="buttons-flat">
-                       <button igxRipple class="buttons-flat-1" igxButton="flat" >
-                          <div class="buttons-flat-icon">
-                             <igx-icon>keyboard_arrow_down</igx-icon>
-                          </div>
+                        </button>
+                      </div>
+                      <div class="buttons-flat">
+                        <button igxRipple class="buttons-flat-1" igxButton="flat" >
+                          <igx-icon>keyboard_arrow_down</igx-icon>
                           Metrics
-                       </button>
+                        </button>
+                      </div>
                     </div>
                     <div class="inputs-input-border">
                        <igx-input-group type="border" class="inputs-input-border-1" >
@@ -107,9 +103,7 @@
                            (keydown)="searchKeyDown($event)"
                            />
                           <igx-suffix>
-                             <div class="inputs-input-border-2-suffix">
-                                <igx-icon>search</igx-icon>
-                             </div>
+                              <igx-icon>search</igx-icon>
                           </igx-suffix>
                        </igx-input-group>
                     </div>
