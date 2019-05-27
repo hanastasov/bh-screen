@@ -101,7 +101,11 @@
                     </div>
                     <div class="inputs-input-border">
                        <igx-input-group type="border" class="inputs-input-border-1" >
-                          <input igxInput type="text" value="Search" />
+                          <input igxInput type="text" value="Search" #search1 id="search1" placeholder="Search"
+                           [(ngModel)]="searchText"
+                           (ngModelChange)="grid.findNext(searchText, caseSensitive, exactMatch)"
+                           (keydown)="searchKeyDown($event)"
+                           />
                           <igx-suffix>
                              <div class="inputs-input-border-2-suffix">
                                 <igx-icon>search</igx-icon>
