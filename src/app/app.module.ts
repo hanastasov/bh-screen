@@ -5,10 +5,12 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RouterModule } from '@angular/router';
 import { AppRoutingModule } from './app-routing.module';
 import { IgxInputGroupModule, IgxIconModule, IgxButtonModule, IgxRippleModule, IgxGridModule, IgxAvatarModule,
-    IgxOverlayService, IgxToggleModule} from 'igniteui-angular';
+    IgxOverlayService, IgxToggleModule, IgxNavigationDrawerModule, IgxLayoutModule} from 'igniteui-angular';
 import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { SettingsMenuComponent } from './settings-menu/settings-menu.component';
+import { MatTreeModule } from '@angular/material/tree';
+import { MatIconModule } from '@angular/material/icon';
 
 @NgModule({
 
@@ -21,8 +23,12 @@ import { SettingsMenuComponent } from './settings-menu/settings-menu.component';
         BrowserAnimationsModule,
         AppRoutingModule,
         IgxInputGroupModule,
+        MatTreeModule,
         IgxIconModule,
+        IgxLayoutModule,
+        MatIconModule,
         IgxToggleModule,
+        IgxNavigationDrawerModule,
         IgxButtonModule,
         IgxGridModule,
         IgxRippleModule,

@@ -413,6 +413,36 @@ main {
     
 }
 
+.tree-container {
+	height: 100%;
+	border: 1px solid grey;
+}
+
+.main {
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	overflow: hidden;
+}
+
+.igx-nav-drawer__aside::-webkit-scrollbar {
+	width: 3px;
+	background: #e4e4e4;
+}
+
+.igx-nav-drawer__aside::-webkit-scrollbar-thumb {
+	background: #0375be;
+	border-radius: 0;
+}
+
+.navdrawer-header {
+	display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
 @function get-palette($palette, $variant: 'light') {
 	$p: igx-color($palette, 'primary');
 	$s: igx-color($palette, 'secondary');

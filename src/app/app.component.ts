@@ -1,9 +1,50 @@
 import { Component, ViewChild, OnInit, ElementRef } from '@angular/core';
 import { athletesData } from './data';
 import { IgxGridComponent, HorizontalAlignment, VerticalAlignment,
-  CloseScrollStrategy, IgxToggleDirective, AutoPositionStrategy } from 'igniteui-angular';
+  CloseScrollStrategy, IgxToggleDirective, AutoPositionStrategy, IgxNavigationDrawerComponent } from 'igniteui-angular';
 import { AnimationMetadata, style, animate, AnimationReferenceMetadata, animation } from '@angular/animations';
 import { SettingsMenuComponent } from './settings-menu/settings-menu.component';
+import { FlatTreeControl } from '@angular/cdk/tree';
+import { MatTreeFlattener, MatTreeFlatDataSource } from '@angular/material/tree';
+
+interface FoodNode {
+  name: string;
+  children?: FoodNode[];
+}
+
+const TREE_DATA: FoodNode[] = [
+  {
+    name: 'Fruit',
+    children: [
+      {name: 'Apple'},
+      {name: 'Banana'},
+      {name: 'Fruit loops'},
+    ]
+  }, {
+    name: 'Vegetables',
+    children: [
+      {
+        name: 'Green',
+        children: [
+          {name: 'Broccoli'},
+          {name: 'Brussel sprouts'},
+        ]
+      }, {
+        name: 'Orange',
+        children: [
+          {name: 'Pumpkins'},
+          {name: 'Carrots'},
+        ]
+      },
+    ]
+  },
+];
+
+interface ExampleFlatNode {
+  expandable: boolean;
+  name: string;
+  level: number;
+}
 
 @Component({
   selector: 'app-root',
@@ -26,6 +67,9 @@ export class AppComponent implements OnInit {
 
     @ViewChild(IgxToggleDirective) public igxToggle: IgxToggleDirective;
 
+    @ViewChild(IgxNavigationDrawerComponent)
+    public drawer: IgxNavigationDrawerComponent;
+
     public density = 'cosy';
     public searchText = '';
     public caseSensitive = false;
@@ -43,6 +87,37 @@ export class AppComponent implements OnInit {
       positionStrategy: new AutoPositionStrategy(this.positionSettings),
       scrollStrategy: new CloseScrollStrategy()
     };
+
+    public drawerState = {
+      open: false,
+      pin: true
+    };
+
+    private transformer = (node: FoodNode, level: number) => {
+      return {
+        expandable: !!node.children && node.children.length > 0,
+        name: node.name,
+        // tslint:disable-next-line:object-literal-shorthand
+        level: level,
+      };
+    }
+
+    // tslint:disable-next-line:member-ordering
+    treeControl = new FlatTreeControl<ExampleFlatNode>(
+      node => node.level, node => node.expandable);
+
+    // tslint:disable-next-line:member-ordering
+    treeFlattener = new MatTreeFlattener(
+      this.transformer, node => node.level, node => node.expandable, node => node.children);
+
+    // tslint:disable-next-line:member-ordering
+    dataSource = new MatTreeFlatDataSource(this.treeControl, this.treeFlattener);
+
+    hasChild = (_: number, node: ExampleFlatNode) => node.expandable;
+
+    constructor() {
+      this.dataSource.data = TREE_DATA;
+    }
 
     public ngOnInit(): void {
       this.data = athletesData;
@@ -71,39 +146,38 @@ export class AppComponent implements OnInit {
       this.overlaySettings.positionStrategy.settings.target = this.target.nativeElement;
       this.overlaySettings.positionStrategy.settings.horizontalDirection = HorizontalAlignment.Left;
       this.igxToggle.open(this.overlaySettings);
-  }
-
-  public mouseleave(ev) {
-     this.igxToggle.close();
-  }
-
-  public changeDisplayDensity(event: any) {
-    this.density = event;
-  }
-
-  public clearSearch() {
-    this.searchText = '';
-    this.grid.clearSearch();
-}
-
-public searchKeyDown(ev) {
-    if (ev.key === 'Enter' || ev.key === 'ArrowDown' || ev.key === 'ArrowRight') {
-        ev.preventDefault();
-        this.grid.findNext(this.searchText, this.caseSensitive, this.exactMatch);
-    } else if (ev.key === 'ArrowUp' || ev.key === 'ArrowLeft') {
-        ev.preventDefault();
-        this.grid.findPrev(this.searchText, this.caseSensitive, this.exactMatch);
     }
-}
 
-public updateSearch() {
-    this.caseSensitive = !this.caseSensitive;
-    this.grid.findNext(this.searchText, this.caseSensitive, this.exactMatch);
-}
+    public mouseleave(ev) {
+      this.igxToggle.close();
+    }
 
-public updateExactSearch() {
-    this.exactMatch = !this.exactMatch;
-    this.grid.findNext(this.searchText, this.caseSensitive, this.exactMatch);
-}
+    public changeDisplayDensity(event: any) {
+      this.density = event;
+    }
 
+    public clearSearch() {
+      this.searchText = '';
+      this.grid.clearSearch();
+    }
+
+    public searchKeyDown(ev) {
+        if (ev.key === 'Enter' || ev.key === 'ArrowDown' || ev.key === 'ArrowRight') {
+            ev.preventDefault();
+            this.grid.findNext(this.searchText, this.caseSensitive, this.exactMatch);
+        } else if (ev.key === 'ArrowUp' || ev.key === 'ArrowLeft') {
+            ev.preventDefault();
+            this.grid.findPrev(this.searchText, this.caseSensitive, this.exactMatch);
+        }
+    }
+
+    public updateSearch() {
+        this.caseSensitive = !this.caseSensitive;
+        this.grid.findNext(this.searchText, this.caseSensitive, this.exactMatch);
+    }
+
+    public updateExactSearch() {
+        this.exactMatch = !this.exactMatch;
+        this.grid.findNext(this.searchText, this.caseSensitive, this.exactMatch);
+    }
 }
